@@ -7,6 +7,7 @@ export const PageAjouter = () => {
     const [titre, setTitle] = useState('');
     const [artiste, setArtist] = useState('');
     const [catégorie, setCategory] = useState('');
+    const [message, setMessage] = useState('');
 
     const TitleChange = (e) => {
         setTitle(e.target.value);
@@ -28,6 +29,17 @@ export const PageAjouter = () => {
         e.preventDefault();
     };
 
+    const ajouterPiece = async () => {
+        const requestOptions = {
+            method: 'POST',
+            body: JSON.stringify({ titre: titre, artiste: artiste, categorie: catégorie }),
+            headers: { 'Content-Type': 'application/json' },
+        };
+        const reponse = await fetch(`/api/pieces/ajouter`, requestOptions);
+        if(reponse.status === 200){setMessage("Ajouté avec succès!");}
+        else{setMessage("Erreur lors de l'ajout.");}
+    }
+
     return (
         <div className="container">
             <h1>Ajouter Page</h1>
@@ -44,9 +56,10 @@ export const PageAjouter = () => {
                     <label >Catégorie</label>
                     <input type="text" className="form-control" value={catégorie} onChange={CategoryChange} />
                 </div>
-                <button type="submit" className="btn btn-primary">Ajouter</button>
+                <button type="submit" className="btn btn-primary" onClick={ajouterPiece}>Ajouter</button>
                 <button type="button" className="btn btn-secondary" onClick={Cancel}>Annuler</button>
             </form>
+            <div><h3>{message}</h3></div>
         </div>
     );
 }

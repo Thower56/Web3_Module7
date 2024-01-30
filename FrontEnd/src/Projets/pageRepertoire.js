@@ -12,15 +12,19 @@ export const PageRepertoire = () => {
     }, []);
 
     const getListePieces = async () => {
-        const resultat = await fetch("/api/pieces");
-        const body = await resultat.json();
-        setPieces(body);
+        try {
+            const resultat = await fetch(`/api/pieces`);
+            const body = await resultat.json();
+            setPieces(body);
+        } catch (error) {
+            console.log('Error:', error);
+        }
     };
     
     return (
         <div>
             <h1>Repertoire Page</h1>
-            <ListePieces pieces={pieces}/>
+            <ListePieces pieces={Pieces}/>
         </div>
     );
 };
