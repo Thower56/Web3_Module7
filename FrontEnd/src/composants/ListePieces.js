@@ -5,10 +5,10 @@ export const ListePieces = ({pieces}) => {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
             {pieces.sort((a, b) => a.categorie.localeCompare(b.categorie)).map((piece) => (
                 <div key={piece._id}>
-                    <ul>
-                        <li>{piece.titre}</li>
-                        <li>{piece.artiste}</li>
-                        <li>{piece.categorie}</li>
+                    <ul Style={"list-style-type: none"}>
+                        <li><b>Titre: </b>{piece.titre}</li>
+                        <li><b>Artiste: </b>{piece.artiste}</li>
+                        <li><b>Categorie: </b>{piece.categorie}</li>
                     </ul>
                 </div>
             ))}
