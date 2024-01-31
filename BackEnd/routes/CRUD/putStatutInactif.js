@@ -27,3 +27,5 @@ router.put('/api/demandeSpeciale/inactif/:id', async (requete, reponse) => {
             );
     }
 });
+
+module.exports = router;
