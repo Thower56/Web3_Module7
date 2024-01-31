@@ -1,4 +1,5 @@
 import React from "react";
+import { Piece } from "./Piece";
 
 export const ListePieces = ({pieces}) => {
     return(
@@ -6,9 +7,7 @@ export const ListePieces = ({pieces}) => {
             {pieces.sort((a, b) => a.categorie.localeCompare(b.categorie)).map((piece) => (
                 <div key={piece._id}>
                     <ul Style={"list-style-type: none"}>
-                        <li><b>Titre: </b>{piece.titre}</li>
-                        <li><b>Artiste: </b>{piece.artiste}</li>
-                        <li><b>Categorie: </b>{piece.categorie}</li>
+                        <li><Piece piece={piece}/></li>
                     </ul>
                 </div>
             ))}
