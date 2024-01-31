@@ -15,3 +15,5 @@ export const pieces = [
     { "titre": "Strawberry Letter 23", "artiste": "The Brothers Johnson", "categorie": "Soul" },
     { "titre": "Stomp!", "artiste": "The Brothers Johnson", "categorie": "Soul" }
 ];
+
+
