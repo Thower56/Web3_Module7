@@ -1,4 +1,3 @@
-import { MongoClient } from 'mongodb'
 const express = require("express");
 const { ObjectId } = require('mongodb');
 const utiliserDB = require('./connectToDB.js')
@@ -17,7 +16,7 @@ router.get('/api/pieces', async(requete, reponse) => {
             }
         }
         catch(error){
-           
+            reponse.status(500).send("Erreur: " + error.message);
         }
     }, reponse).catch(
         () => reponse.status(500).send("Erreur: ")
