@@ -11,7 +11,7 @@ export const PageAdminDemandeSpeciale = () => {
 
     const getListeDemandes = async () => {
         try {
-            const resultat = await fetch('/api/demandeSpeciale');
+            const resultat = await fetch('http://localhost:8000/api/demandeSpeciale');
             const body = await resultat.json();
             setDemande(body);
         } catch (error) {

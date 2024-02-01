@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-
+import 'bootstrap/dist/css/bootstrap.css';
 import { ListePieces } from '../composants/ListePieces';
 import { pieces } from '../composants/contenu-pieces-test';
 
@@ -13,7 +13,7 @@ export const PageRepertoire = () => {
 
     const getListePieces = async () => {
         try {
-            const resultat = await fetch(`/api/pieces`);
+            const resultat = await fetch(`http://localhost:8000/api/pieces`);
             const body = await resultat.json();
             setPieces(body);
         } catch (error) {
@@ -24,7 +24,7 @@ export const PageRepertoire = () => {
     return (
         <div>
             <h1>Repertoire Page</h1>
-            <ListePieces pieces={Pieces}/>
+            <ListePieces pieces={pieces}/>
         </div>
     );
 };

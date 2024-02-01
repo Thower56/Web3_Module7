@@ -1,6 +1,8 @@
-import {React, useState, Navigate} from "react";
+import {React, useState} from "react";
 import { useParams } from "react-router-dom";
 import { Piece } from "../composants/Piece";
+import { Navigate } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
 
 export const PageModifier = ({piece}) => {
     const [piecesModifier, setPieces] = useState();
@@ -22,7 +24,7 @@ export const PageModifier = ({piece}) => {
             
         };
         console.log(requestOptions);
-        const response = await fetch(`/api/pieces/${id}/modifier`, requestOptions);
+        const response = await fetch(`http://localhost:8000/api/pieces/${id}/modifier`, requestOptions);
         console.log(response);
         if (response.status === 200) {
             console.log("Piece modifier!");
