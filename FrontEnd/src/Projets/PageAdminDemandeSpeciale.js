@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { ListeDemandeSpeciale } from '../composants/ListeDemandeSpeciale';
 
-export const PageRepertoire = () => {
+export const PageAdminDemandeSpeciale = () => {
     const [demande, setDemande] = useState([]);
 
     useEffect(() => {
@@ -20,7 +20,7 @@ export const PageRepertoire = () => {
     };
     return (
         <div>
-            <h1>Repertoire Page</h1>
+            <h1>Liste des demandes speciales</h1>
             <ListeDemandeSpeciale demandeSpeciale={demande}/>
         </div>
     );

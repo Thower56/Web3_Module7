@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const PageAccueil = () => {
     return (
         <>
-            <Container className="" style={{backgroundImage:'url(./images/pageAccueil.jpg)'}}>
+            <Container className="" >
                 <Row>
                     <Col>
                         <h1 className="">Bienvenue dans notre magasin de musique</h1>
@@ -18,3 +18,5 @@ export const PageAccueil = () => {
         </>
     );
 }
+
+// style={{backgroundImage:'url(./images/pageAccueil.jpg)'}}
