@@ -1,5 +1,6 @@
 import React from "react";
 import { Piece } from "../composants/Piece";
+import 'bootstrap/dist/css/bootstrap.css';
 
 export const PageSupprimer = ({piece}) => {
     const [rediriger, setRediriger] = useState(false);
@@ -9,12 +10,12 @@ export const PageSupprimer = ({piece}) => {
         const requestOptions = {
             method: 'DELETE'
         };
-        let reponse = await fetch(`/api/piece`);
+        let reponse = await fetch(`http://localhost:8000/api/piece`);
         if(reponse.status === 200){
             const body = await reponse.json();
         }
        
-        reponse = await fetch(`/api/pieces/${id}/supprimer`, requestOptions);
+        reponse = await fetch(`http://localhost:8000/api/pieces/${id}/supprimer`, requestOptions);
         if(reponse.status === 200){console.log("Supprimé avec succès!");}
         else{console.log("Erreur lors de la suppression.");}
         window.location.reload();

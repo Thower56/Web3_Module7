@@ -1,7 +1,7 @@
 import React from 'react';
 import { ListePiecesAdmin } from '../composants/ListePiecesAdmin';
 import { useState, useEffect } from 'react';
-
+import { pieces } from '../composants/contenu-pieces-test';
 export const PageAdmin = () => {
     const [Pieces, setPieces] = useState([]);
 
@@ -11,7 +11,7 @@ export const PageAdmin = () => {
 
     const getListePieces = async () => {
         try {
-            const resultat = await fetch(`/api/pieces`);
+            const resultat = await fetch(`http://localhost:8000/api/pieces`);
             const body = await resultat.json();
             setPieces(body);
         } catch (error) {
@@ -21,7 +21,7 @@ export const PageAdmin = () => {
     return (
         <div>
             <h1>Admin Page</h1>
-            <ListePiecesAdmin pieces={Pieces}/>
+            <ListePiecesAdmin pieces={pieces}/>
         </div>
     );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
-
+import 'bootstrap/dist/css/bootstrap.css';
 
 export const PageAjouter = () => {
     const [titre, setTitle] = useState('');
@@ -35,7 +34,7 @@ export const PageAjouter = () => {
             body: JSON.stringify({ titre: titre, artiste: artiste, categorie: catégorie }),
             headers: { 'Content-Type': 'application/json' },
         };
-        const reponse = await fetch(`/api/pieces/ajouter`, requestOptions);
+        const reponse = await fetch(`http://localhost:8000/api/pieces/ajouter`, requestOptions);
         if(reponse.status === 200){setMessage("Ajouté avec succès!");}
         else{setMessage("Erreur lors de l'ajout.");}
     }

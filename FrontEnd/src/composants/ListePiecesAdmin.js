@@ -5,15 +5,14 @@ import { useNavigate } from "react-router-dom";
 import { Piece } from "./Piece";
 
 export const ListePiecesAdmin = ({pieces}) => {
-
-    const ModifierPiece = (_id) => {
-        const navigate = useNavigate();
-        navigate(`/modifier/${_id}`);
+    const navigate = useNavigate();
+    
+    const ModifierPiece = (id) => {
+        navigate(`/modifier/${id}`);
     };
 
-    const EffacerPiece = (_id) => {
-        const navigate = useNavigate();
-        navigate(`/modifier/${_id}`);
+    const EffacerPiece = (id) => {
+        navigate(`/modifier/${id}`);
     };
 
 
