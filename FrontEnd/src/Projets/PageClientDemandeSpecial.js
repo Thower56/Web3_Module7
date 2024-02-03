@@ -3,17 +3,18 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { ListeDemandeSpecialeClient } from "../composants/ListeDemandeSpecialeClient";
 import { Button } from "react-bootstrap";
 import { Piece } from "../composants/Piece";
-import { pieces } from "../composants/contenu-pieces-test";
+
 
 export const PageClientDemandeSpecial = () => {
     const [ListePieces, setListePieces] = useState([]);
-    const [repertoire, setRepertoire] = useState();
+    const [repertoire, setRepertoire] = useState([]);
 
+    
     useEffect(() => {
-        getListePieces();
-    }, [ListePieces]);
+        getRepertoire();
+    }, []);
 
-    const getListePieces = async () => {
+    const getRepertoire = async () => {
         try {
             const resultat = await fetch(`http://localhost:8000/api/pieces`);
             const body = await resultat.json();
@@ -23,14 +24,21 @@ export const PageClientDemandeSpecial = () => {
         }
     }
 
-    const DeletePiece = ({piece}) => {
-        const newListePieces = ListePieces.filter((p) => p._id !== piece._id);
+    const DeletePiece = ({pieceARetirer}) => {
+        const newListePieces = ListePieces;
+        newListePieces.pop(pieceARetirer);
         setListePieces(newListePieces);
     }
 
-    const AjouterPiece = ({id}) => {
+    const AjouterPiece = (id) => {
+        var newListePieces = ListePieces;
         const piece = repertoire.find((p) => p._id === id);
-        setListePieces([...ListePieces, piece]);
+        newListePieces.push(piece);
+        newListePieces = newListePieces.filter((value, index, self) => {
+            return self.indexOf(value) === index;
+          });
+        setListePieces(newListePieces);
+        console.log(ListePieces);
     }
 
     return (
@@ -46,7 +54,7 @@ export const PageClientDemandeSpecial = () => {
                 </div>
             </div>
             <h2>Votre demande special:</h2>
-            <ListeDemandeSpecialeClient piece={ListePieces} retirerPiece={DeletePiece}/>
+            <ListeDemandeSpecialeClient Pieces={ListePieces} DeletePiece={DeletePiece}/>
             <h2>Nos pieces:</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
             {repertoire.map((piece) => (
