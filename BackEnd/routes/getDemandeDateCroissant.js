@@ -5,9 +5,10 @@ const router = express.Router();
 router.get('/api/demandeSpeciale/dateOrdreCroissant', async(requete, reponse) => {
     utiliserDB(async(db) => {
         try{
-            const resultat = await db.collection('demandeSpeciale').find().sort({date: 1}).toArray();
-            if (resultat !== null){
-                reponse.status(200).json(resultat);
+            const resultat = await db.collection('demandeSpeciale').find().sort({date: -1}).toArray();
+            const resultatTrie = resultat.sort((a, b) =>  a.dateAjout.localeCompare(b.dateAjout) );
+            if (resultatTrie !== null){
+                reponse.status(200).json(resultatTrie);
             }
             else{
                 reponse.status(404).send("Aucune demande trouvee");        
