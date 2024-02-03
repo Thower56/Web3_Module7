@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-function validerParametres (parametres) {
+export function validerParametres (parametres) {
     let result = false;
 
     for (let parametre in parametres){
@@ -12,4 +12,4 @@ function validerParametres (parametres) {
     return result;
 }
 
-module.exports = router;
+module.exports = validerParametres;
