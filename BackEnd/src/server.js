@@ -17,7 +17,9 @@ const getDemandeDateDecroissantRoute = require('../routes/getDemandeDateDecroiss
 const getDemandeParClientRoute = require('../routes/getDemandeParClient');
 const getTop5Route = require('../routes/getTop5');
 
+var cors = require('cors');
 
+app.use(cors());
 app.use(getRoute);
 app.use(postRoute);
 app.use(putRoute);
