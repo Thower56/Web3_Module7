@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { Piece } from "./Piece";
 
-export const ListeDemandeSpecialeClient = ({Pieces, retirerPiece}) => {
-    console.log("Pieces: " + Pieces);
+export const ListeDemandeSpecialeClient = ({Pieces, DeletePiece}) => {
+    console.log("ListeDemandeSpecialeClient");
+    console.log(Pieces);
     return(
         <>
-        <div>
-            {Pieces && Pieces.map((piece) => {
-                <div key={piece._id}>
-                    <h2>{piece.Titre}</h2>
-                    <p>{piece.Artiste}</p>
-                    <p>{piece.Categorie}</p>
-                    <Button onClick={retirerPiece} variant="outlined" >X</Button>
-                </div>
-        })}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+            {Pieces.map((piece) => {
+                return(
+                    <div key={piece._id}>
+                        <Piece piece={piece}/>
+                        <Button onClick={() => DeletePiece(piece._id)} className="btn btn-danger" >X</Button>
+                    </div>
+                )
+            })}
         </div>
         </>
     );
