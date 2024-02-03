@@ -24,7 +24,7 @@ export const PageRepertoire = () => {
     return (
         <div>
             <h1>Repertoire Page</h1>
-            <ListePieces pieces={pieces}/>
+            <ListePieces pieces={Pieces}/>
         </div>
     );
 };

@@ -10,6 +10,7 @@ import { PageAjouter } from './Projets/pageAjouter.js';
 import { PageAdmin } from './Projets/pageAdmin.js';
 import { PageModifier } from './Projets/PageModifier.js';
 import { PageClientDemandeSpecial } from './Projets/PageClientDemandeSpecial.js';
+import {PageSupprimer} from './Projets/PageSupprimer.js';
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
         <Route path="/admin" element={<PageAdmin />} />
         <Route path="/demandeSpecial" element={<PageClientDemandeSpecial />} />
         <Route path="/modifier/:id" element={<PageModifier />} />
-        <Route path="/supprimer/:id" element={<PageAdmin />} />
+        <Route path="/supprimer/:id" element={<PageSupprimer />} />
       </Routes>
     </Container>
   </BrowserRouter>

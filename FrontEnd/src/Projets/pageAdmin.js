@@ -21,7 +21,7 @@ export const PageAdmin = () => {
     return (
         <div>
             <h1>Admin Page</h1>
-            <ListePiecesAdmin pieces={pieces}/>
+            <ListePiecesAdmin pieces={Pieces}/>
         </div>
     );
 };

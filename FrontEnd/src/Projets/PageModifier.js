@@ -1,18 +1,31 @@
-import {React, useState} from "react";
+import {React, useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { Piece } from "../composants/Piece";
 import { Navigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 
-export const PageModifier = ({piece}) => {
+export const PageModifier = () => {
     const [piecesModifier, setPieces] = useState();
-    const [titre, setTitre] = useState("");
-    const [artiste, setArtiste] = useState("");
-    const [categorie, setCategorie] = useState("");
+    const [titre, setTitre] = useState();
+    const [artiste, setArtiste] = useState();
+    const [categorie, setCategorie] = useState();
     const [rediriger, setRediriger] = useState(false);
-
-    const { id } = useParams();
-
+    const param = useParams();
+    
+    const getPiece = async () => {
+        if(piecesModifier === undefined){
+            try {
+                const resultat = await fetch(`http://localhost:8000/api/pieces/${param.id}`);
+                const body = await resultat.json();
+                setPieces(body);
+            } catch (error) {
+                console.log('Error:', error);
+            }
+        } 
+    }
+    
+    useEffect(() => {getPiece();}, []);
+    
     const ModifierPiece = async () => {
         
         console.log("Editing piece:", piecesModifier);
@@ -24,7 +37,7 @@ export const PageModifier = ({piece}) => {
             
         };
         console.log(requestOptions);
-        const response = await fetch(`http://localhost:8000/api/pieces/${id}/modifier`, requestOptions);
+        const response = await fetch(`http://localhost:8000/api/pieces/${param.id}/modifier`, requestOptions);
         console.log(response);
         if (response.status === 200) {
             console.log("Piece modifier!");
@@ -32,17 +45,16 @@ export const PageModifier = ({piece}) => {
             console.log("Erreur lors de la modification.");
         }
         
-        window.location.reload();
     };
 
     const Modifier = () => {
-        let piece = {};
-        piece.categorie = categorie || document.getElementById("categorie")?.placeholder;
-        piece.artiste = artiste || document.getElementById("artiste")?.placeholder;
-        piece.titre = titre || document.getElementById("titre")?.placeholder;
+        let piece = {categorie: "", artiste: "", titre: ""};
+        piece.categorie = categorie ? categorie : document.getElementById("categorie")?.value;
+        piece.artiste = artiste ? artiste : document.getElementById("artiste")?.placeholder;
+        piece.titre = titre ? titre :  document.getElementById("titre")?.placeholder;
         setPieces(piece);
-        console.log("Nouvelle piece: " + piece);
-        ModifierPiece();
+        console.log("Piece modifier: ");
+        console.log(piecesModifier);
     };
 
     const Annuler = () => {
@@ -52,18 +64,18 @@ export const PageModifier = ({piece}) => {
     return(
         <>
         {rediriger ? <Navigate to="/admin"/> : null}
-        <form>
+
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
-                <div key={piece._id}>
-                    <Piece piece={piece}/>
-                    <input id="titre" onChange={(event) => setTitre(event.target.value)} className="form-control" placeholder="titre"></input>
-                    <input id="artiste" onChange={(event) => setArtiste(event.target.value)} className="form-control" placeholder="Artiste"></input>
-                    <input id="categorie" onChange={(event) => setCategorie(event.target.value)} className="form-control" placeholder="Categorie"></input>
-                    <button className="btn btn-primary" onClick={() =>{Modifier()}}>Modifier</button>
-                    <button className="btn btn-danger" onClick={() => Annuler()}>Annuler</button>
+                <div>
+                    {piecesModifier ? <Piece piece={piecesModifier}/> : null}
+                    {piecesModifier ? <input id="titre" onChange={(event) => setTitre(event.target.value)} className="form-control" placeholder={piecesModifier.titre}></input> : null}
+                    {piecesModifier ? <input id="artiste" onChange={(event) => setArtiste(event.target.value)} className="form-control" placeholder={piecesModifier.artiste}></input> : null}
+                    {piecesModifier ? <input id="categorie" onChange={(event) => setCategorie(event.target.value)} className="form-control" placeholder={piecesModifier.categorie}></input> : null}
+                    <button className="btn btn-primary" onClick={() => {Modifier(); ModifierPiece();}}>Modifier</button>
+                    <button className="btn btn-danger" onClick={() => {Annuler()}}>Annuler</button>
                 </div>
             </div>
-        </form>
+
         </>
     )
 }
