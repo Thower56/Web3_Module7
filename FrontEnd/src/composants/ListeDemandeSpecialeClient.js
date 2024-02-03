@@ -12,7 +12,7 @@ export const ListeDemandeSpecialeClient = ({Pieces, DeletePiece}) => {
                 return(
                     <div key={piece._id}>
                         <Piece piece={piece}/>
-                        <Button onClick={() => DeletePiece(piece)} className="btn btn-danger" >X</Button>
+                        <Button onClick={() => DeletePiece(piece._id)} className="btn btn-danger" >X</Button>
                     </div>
                 )
             })}

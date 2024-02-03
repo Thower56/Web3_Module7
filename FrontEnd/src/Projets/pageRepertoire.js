@@ -34,8 +34,8 @@ export const PageRepertoire = () => {
                 </div>
                 <div className='col-6'>
                     <select id='selection' onChange={changementDeTri}>
-                        <option value="trieParArtiste">Artiste</option>
                         <option value="trieParCategorie">Categorie</option>
+                        <option value="trieParArtiste">Artiste</option>
                         <option value="trieParTitre">Titre</option>
                     </select>
                 </div>

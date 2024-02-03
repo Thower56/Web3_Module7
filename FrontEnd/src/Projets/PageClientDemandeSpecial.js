@@ -12,7 +12,7 @@ export const PageClientDemandeSpecial = () => {
     
     useEffect(() => {
         getRepertoire();
-    }, []);
+    }, [ListePieces]);
 
     const getRepertoire = async () => {
         try {
@@ -24,9 +24,8 @@ export const PageClientDemandeSpecial = () => {
         }
     }
 
-    const DeletePiece = ({pieceARetirer}) => {
-        const newListePieces = ListePieces;
-        newListePieces.pop(pieceARetirer);
+    const DeletePiece = (id) => {
+        const newListePieces = ListePieces.filter((piece) => piece._id !== id);
         setListePieces(newListePieces);
     }
 
@@ -34,9 +33,7 @@ export const PageClientDemandeSpecial = () => {
         var newListePieces = ListePieces;
         const piece = repertoire.find((p) => p._id === id);
         newListePieces.push(piece);
-        newListePieces = newListePieces.filter((value, index, self) => {
-            return self.indexOf(value) === index;
-          });
+        newListePieces = newListePieces.filter((value ,index , array)=>array.findIndex(t=>(t._id === value._id)) === index);
         setListePieces(newListePieces);
         console.log(ListePieces);
     }
@@ -60,7 +57,7 @@ export const PageClientDemandeSpecial = () => {
             {repertoire.map((piece) => (
                 <div key={piece._id}>
                     <Piece piece={piece}/>
-                    <button className="btn btn-primary" onClick={()=> {AjouterPiece(piece._id)}}>Ajouter</button>
+                    <button className="btn btn-primary" onClick={()=> AjouterPiece(piece._id)}>Ajouter</button>
                 </div>
             ))}
             </div>
