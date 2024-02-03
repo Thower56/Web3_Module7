@@ -9,12 +9,6 @@ import { Link } from 'react-router-dom';
 
 export const PageAdmin = () => {
     return (
-<<<<<<< HEAD
-        <div>
-            <h1>Admin Page</h1>
-            <ListePiecesAdmin pieces={Pieces}/>
-        </div>
-=======
         <Container>
         <h1>Page d'administration</h1>
         <Link to="/repertoire">
@@ -27,7 +21,6 @@ export const PageAdmin = () => {
             <Button variant="primary" className="m-2">Consulter les demandes spéciales</Button>
         </Link>
     </Container>
->>>>>>> 662e59fad4f3f3a1d0d774729aa8ade5897d6167
     );
     // const [Pieces, setPieces] = useState([]);
 
