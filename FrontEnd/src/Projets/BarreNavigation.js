@@ -10,7 +10,6 @@ export function BarreNavigation() {
                     <Nav.Link className="nav-link" href="/">Accueil</Nav.Link>
                     <Nav.Link className="nav-link" href="/repertoire">Repertoire</Nav.Link>
                     <Nav.Link className="nav-link" href="/ajouter">Ajouter</Nav.Link>
-                    <Nav.Link className="nav-link" href="/demandeSpecial">Demande Special</Nav.Link>
                     <Nav.Link className="nav-link" href="/admin">Administration</Nav.Link>
                 </Nav>
             </Container>

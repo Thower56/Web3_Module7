@@ -5,15 +5,12 @@ const router = express.Router();
 router.get('/api/demandeSpeciale/active', async(requete, reponse) => {
     utiliserDB(async(db) => {
         try{
-            console.log("dans try");
-
             const resultat = await db.collection('demandeSpeciale').find({statut: "actif"}).toArray();
-            console.log(resultat);
-            if (resultat !== null){
+            if (resultat.length > 0){
                 reponse.status(200).json(resultat);                
             }
             else{
-                reponse.status(404).send("Aucune liste trouvee");        
+                reponse.status(200).send([]);        
             }
         }
         catch(error){

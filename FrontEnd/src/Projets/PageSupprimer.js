@@ -38,16 +38,16 @@ export const PageSupprimer = ({piece}) => {
         reponse = await fetch(`http://localhost:8000/api/pieces/${id}/supprimer`, requestOptions);
         if(reponse.status === 200){console.log("Supprimé avec succès!");}
         else{console.log("Erreur lors de la suppression.");}
-        navigate("/admin");
+        navigate("/repertoireAdmin");
     };
 
     const Annuler = () => {
-        navigate("/admin");
+        navigate("/repertoireAdmin");
     };
 
     return(
         <>
-            {rediriger ? <Navigate to="/admin"/> : null}
+            {rediriger ? <Navigate to="/repertoireAdmin"/> : null}
             <h1>Supprimer une pièce</h1>
             <span>Voulez-vous vraiment supprimer la piece: </span>
             {pieces ? <Piece piece={pieces}/> : null}

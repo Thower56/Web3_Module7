@@ -1,48 +1,19 @@
 import React from 'react';
-import { ListePiecesAdmin } from '../composants/ListePiecesAdmin';
-import { useState, useEffect } from 'react';
-import { pieces } from '../composants/contenu-pieces-test';
-import { Container, Button,  Row, Col } from "react-bootstrap";
+import { Container, Button,  Row, Col, Nav } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import { BarreNavigationAdmin } from './DemandeSpecialeAdmin/BarreNavigationAdmin';
 
 
 
 export const PageAdmin = () => {
     return (
         <Container>
-        <h1>Page d'administration</h1>
-        <Link to="/repertoire">
-            <Button variant="primary" className="m-2">Consulter le répertoire</Button>
-        </Link>
-        <Link to="/admin/creer-piece">
-            <Button variant="primary" className="m-2">Créer une pièce</Button>
-        </Link>
-        <Link to="/admin/demandes-speciales">
-            <Button variant="primary" className="m-2">Consulter les demandes spéciales</Button>
-        </Link>
-    </Container>
+            <h1>Page d'administration</h1>
+            <BarreNavigationAdmin />
+            <Row>
+                <h3>Bienvenue sur la page administrateur</h3>
+                <p>Pour modifier ou supprimer un titre, cliquer sur Repertoire complet</p>
+            </Row>        
+        </Container>
     );
-    // const [Pieces, setPieces] = useState([]);
-
-    // useEffect(() => {
-    //     getListePieces();
-    // }, []);
-
-    // const getListePieces = async () => {
-    //     try {
-    //         const resultat = await fetch(`/api/pieces`);
-    //         const body = await resultat.json();
-    //         setPieces(body);
-    //     } catch (error) {
-    //         console.log('Error:', error);
-    //     }
-    // };
-    // return (
-    //     <div>
-    //         <h1>Admin Page</h1>
-    //         <ListePiecesAdmin pieces={Pieces}/>
-    //     </div>      
-   
-
-    // );
 };

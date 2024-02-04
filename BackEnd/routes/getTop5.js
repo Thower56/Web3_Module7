@@ -5,7 +5,6 @@ const router = express.Router();
 router.get('/api/demandeSpeciale/top5', async(requete, reponse)=>{
     utiliserDB(async(db) => {
         try{
-            console.log("dans try");
             let demandeTitre = {};
             const resultat = await db.collection('demandeSpeciale').find().toArray();
             resultat.forEach(element => {
@@ -19,13 +18,10 @@ router.get('/api/demandeSpeciale/top5', async(requete, reponse)=>{
             demandeTitre = Object.keys(demandeTitre).sort(function(a, b){return demandeTitre[b] - demandeTitre[a]});
             let topDemandes = demandeTitre.slice(0, 5);
             if(topDemandes.length > 0){
-                console.log("reponse status 200");
                 reponse.status(200).json(topDemandes);
             }
             else{
-                console.log("dans else reponse status 404");
-
-                reponse.status(404).send("Aucun titre trouve");
+                reponse.status(200).send([]);
             }
         }
         catch(error){
@@ -37,7 +33,5 @@ router.get('/api/demandeSpeciale/top5', async(requete, reponse)=>{
         () => reponse.status(500).send("Erreur: aucun titre")
     );
 })
-
-
 
 module.exports = router;

@@ -1,5 +1,3 @@
-import {React, useState} from "react";
-import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Piece } from "./Piece";
 
@@ -15,18 +13,17 @@ export const ListePiecesAdmin = ({pieces}) => {
         navigate(`/supprimer/${id}`);
     };
 
-
     return(
         <>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
-            {pieces.map((piece) => (
-                <div key={piece._id}>
-                    <Piece piece={piece}/>
-                    <button className="btn btn-primary" onClick={() =>{ModifierPiece(piece._id)}}>Modifier</button>
-                    <button className="btn btn-danger" onClick={() => {EffacerPiece(piece._id)}}>Effacer</button>
-                </div>
-            ))}
-        </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+                {pieces.length > 0 && pieces.map((piece) => (
+                    <div key={piece._id} style={{ border: "1px solid #ccc", padding: "10px", borderRadius: "5px", borderColor: "blue" }}>
+                        <Piece piece={piece}/>
+                        <button className="btn btn-primary" onClick={() =>{ModifierPiece(piece._id)}}>Modifier</button>
+                        <button className="btn btn-danger" onClick={() => {EffacerPiece(piece._id)}}>Effacer</button>
+                    </div>
+                ))}
+            </div>
         </>
     )
 }

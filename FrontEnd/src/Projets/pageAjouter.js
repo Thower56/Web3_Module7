@@ -31,7 +31,7 @@ export const PageAjouter = () => {
     const ajouterPiece = async () => {
         const requestOptions = {
             method: 'POST',
-            body: JSON.stringify({ titre: titre, artiste: artiste, categorie: catégorie }),
+            body: JSON.stringify({ titre: titre, artiste: artiste, categories: catégorie }),
             headers: { 'Content-Type': 'application/json' },
         };
         const reponse = await fetch(`http://localhost:8000/api/pieces/ajouter`, requestOptions);

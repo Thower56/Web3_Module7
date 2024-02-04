@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Piece } from "../composants/Piece";
 import { Navigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
+import { BarreNavigationAdmin } from "./DemandeSpecialeAdmin/BarreNavigationAdmin";
 
 export const PageModifier = () => {
     const [piecesModifier, setPieces] = useState();
@@ -23,8 +24,13 @@ export const PageModifier = () => {
             }
         } 
     }
-    
-    useEffect(() => {getPiece();}, []);
+
+    useEffect(() => {
+        getPiece();
+        if (piecesModifier) {
+            ModifierPiece();
+        }
+    }, [piecesModifier]);
     
     const ModifierPiece = async () => {
         
@@ -52,9 +58,12 @@ export const PageModifier = () => {
         piece.categorie = categorie ? categorie : document.getElementById("categorie")?.value;
         piece.artiste = artiste ? artiste : document.getElementById("artiste")?.placeholder;
         piece.titre = titre ? titre :  document.getElementById("titre")?.placeholder;
-        setPieces(piece);
-        console.log("Piece modifier: ");
-        console.log(piecesModifier);
+        const confirmation = window.confirm("Voulez-vous vraiment modifier cette pièce?");
+        if(confirmation){
+            setPieces(piece, ModifierPiece);
+            console.log("Piece modifier: ");
+            console.log(piecesModifier);
+        }
     };
 
     const Annuler = () => {
@@ -63,8 +72,9 @@ export const PageModifier = () => {
 
     return(
         <>
-        {rediriger ? <Navigate to="/admin"/> : null}
+        {rediriger ? <Navigate to="/repertoireAdmin"/> : null}
 
+            <BarreNavigationAdmin />
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
                 <div>
                     {piecesModifier ? <Piece piece={piecesModifier}/> : null}

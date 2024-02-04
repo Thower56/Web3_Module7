@@ -18,8 +18,7 @@ router.delete('/api/pieces/:id/supprimer', async (requete, reponse) => {
             else{
                 reponse.status(404).send("La piece n'a pas ete supprimee");
             }
-        }
-        
+        }        
     }, reponse).catch(
         () => reponse.status(500).send("Erreur: la piece n'a pas pas ete supprimee")
     );
