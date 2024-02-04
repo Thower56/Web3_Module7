@@ -8,7 +8,6 @@ import ListeDemandeSpecialeDateDecroissante from '../composants/ListeDemandeSpec
 
 export const PageAdminGestionDemandeSpeciale = () => {
   return (
-
     <div>
       <h1>Gestion des demandes spéciales</h1>
       <NavigationDemandeSpeciale />
@@ -16,6 +15,5 @@ export const PageAdminGestionDemandeSpeciale = () => {
       <Route path="/demandes-speciales-date-croissante" component={ListeDemandeSpecialeDateCroissante} />
       <Route path="/demandes-speciales-date-decroissante" component={ListeDemandeSpecialeDateDecroissante} />
     </div>
-
   );
 };

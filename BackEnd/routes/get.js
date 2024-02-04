@@ -28,7 +28,6 @@ router.get('/api/pieces/:id', async (requete, reponse) => {
 
     utiliserDB(async (db) => {
         const resultat = await db.collection('repertoire').findOne({_id: new ObjectId(id)});
-        console.log(resultat);
         if (resultat !== null){
             reponse.status(200).json(resultat);
         }

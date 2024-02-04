@@ -15,7 +15,7 @@ import { PageAdminDemandeSpecialeTotal } from './Projets/DemandeSpecialeAdmin/Pa
 import { PageAdminDemandeSpecialeActive } from './Projets/DemandeSpecialeAdmin/PageAdminDemandeSpecialeActive.js';
 import { PageAdminDemandeSpecialeOrdreCroissant } from './Projets/DemandeSpecialeAdmin/PageAdminDemandeSpecialeOrdreCroissant.js';
 import { PageAdminDemandeSpecialeOrdreDecroissant } from './Projets/DemandeSpecialeAdmin/PageAdminDemandeSpecialeOrdreDecroissant.js';
-import { PageAdminTop5 } from './Projets/PageAdminTop5.js';
+import { PageAdminTop5 } from './Projets/DemandeSpecialeAdmin/PageAdminTop5.js';
 import {PageSupprimer} from './Projets/PageSupprimer.js';
 
 function App() {

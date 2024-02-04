@@ -12,6 +12,7 @@ export const NavigationDemandeSpeciale = () => {
                     <Nav.Link as={Link} to="/demandes-speciales-actives">Demandes actives</Nav.Link>
                     <Nav.Link as={Link} to="/demandes-speciales-date-croissante">Date croissante</Nav.Link>
                     <Nav.Link as={Link} to="/demandes-speciales-date-decroissante">Date décroissante</Nav.Link>
+                    <Nav.Link as={Link} to="/top5">Top 5</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
