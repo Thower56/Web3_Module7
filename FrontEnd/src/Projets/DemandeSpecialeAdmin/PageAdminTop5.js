@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { ListePieces } from '../../composants/ListePieces';
-import { NavigationDemandeSpeciale } from './BarreNavigationAdminDemandeSpeciale';
+import { BarreNavigationAdmin } from './BarreNavigationAdmin';
 import { RecuperationListe } from '../../composants/RecuperationListe';
 
 
@@ -10,7 +10,7 @@ export const PageAdminTop5 = () => {
 
    return(
        <div>
-           <NavigationDemandeSpeciale />
+           <BarreNavigationAdmin />
            <h1>Top 5 des demandes speciales</h1>
            <ListePieces demandeSpeciale={demande}/>
        </div>)

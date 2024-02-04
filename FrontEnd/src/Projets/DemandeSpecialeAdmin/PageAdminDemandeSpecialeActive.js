@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { ListeDemandeSpeciale } from '../../composants/ListeDemandeSpeciale';
-import { NavigationDemandeSpeciale } from './BarreNavigationAdminDemandeSpeciale';
+import { BarreNavigationAdmin } from './BarreNavigationAdmin';
 import { handleClickDesactiver } from './handleClickDesactiver';
 
 export const PageAdminDemandeSpecialeActive = () => {
@@ -25,7 +25,7 @@ export const PageAdminDemandeSpecialeActive = () => {
 
     return(
         <div>
-            <NavigationDemandeSpeciale />
+            <BarreNavigationAdmin />
             <h1>Liste des demandes speciales actives</h1>
             <ListeDemandeSpeciale demandeSpeciale={demandeSpeciale} handleClickDesactiver={handleClickDesactiver} setDemandeSpeciale={setDemandeSpeciale}/>
         </div>
