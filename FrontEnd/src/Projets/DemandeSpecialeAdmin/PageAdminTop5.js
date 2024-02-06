@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { ListePieces } from '../../composants/ListePieces';
 import { BarreNavigationAdmin } from './BarreNavigationAdmin';
 import { RecuperationListe } from '../../composants/RecuperationListe';
-import { ListeTop5 } from '../../composants/ListeTop5'
 import { ListeDemandeSpeciale } from '../../composants/ListeDemandeSpeciale';
 
 export const PageAdminTop5 = () => {
