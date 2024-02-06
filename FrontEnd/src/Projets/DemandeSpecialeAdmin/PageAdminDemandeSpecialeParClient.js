@@ -13,18 +13,23 @@ export const PageAdminDemandeSpecialeParClient = () => {
 
         const listeDemandesParClient = async () => {
             try {
-                const resultat = await fetch(`http://localhost:8000/api/demandeSpeciale/${nomClient}`);
-                if (!resultat.ok) {
-                    throw new Error('Erreur lors de la récupération des données');
+                if(nomClient !== '') {
+                    const resultat = await fetch(`http://localhost:8000/api/demandeSpeciale/${nomClient}`);
+                    if (!resultat.ok) {
+                        throw new Error('Erreur lors de la récupération des données');
+                    }
+                    const listeDemande = await resultat.json();
+                    setDemandeSpeciale(listeDemande);                    
                 }
-                const listeDemande = await resultat.json();
-                setDemandeSpeciale(listeDemande);
+                else{
+                    setDemandeSpeciale([]);
+                }
             } catch (error) {
                 console.log('Error:', error);
             }
         };
         listeDemandesParClient();
-    }, [])
+    }, [nomClient])
 
     return(
         <div>
