@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 import { Piece } from "./Piece";
 
-export const ListeDemandeSpecialeClient = ({Pieces, DeletePiece}) => {
+export const PiecesDemandeSpecialeClient = ({Pieces, DeletePiece}) => {
     return(
         <>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>

@@ -1,11 +1,9 @@
 import React from "react";
-import {trieParArtiste} from "./trieParArtiste";
-import {trieParCategorie} from "./trieParCategorie";
-import {trieParTitre} from "./trieParTitre";
+import { trieParArtiste } from "./trieParArtiste";
+import { trieParCategorie } from "./trieParCategorie";
+import { trieParTitre } from "./trieParTitre";
 
-
-export const ListePieces = ({pieces, value, button}) => {
-
+export const RepertoireDemandeSpecial = ({pieces, value, button}) => {
     const listeRecus = ({pieces}) => {
         if(value === "trieParArtiste") return (trieParArtiste({pieces, button}));
         else if(value === "trieParTitre") return (trieParTitre({pieces, button}));

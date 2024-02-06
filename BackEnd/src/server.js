@@ -16,6 +16,7 @@ const getDemandeDateCroissantRoute = require('../routes/getDemandeDateCroissant'
 const getDemandeDateDecroissantRoute = require('../routes/getDemandeDateDecroissant');
 const getDemandeParClientRoute = require('../routes/getDemandeParClient');
 const getTop5Route = require('../routes/getTop5');
+const postDemandeSpecialesRoute = require('../routes/postDemandeSpeciales');
 
 var cors = require('cors');
 
@@ -31,5 +32,6 @@ app.use(getDemandeDateCroissantRoute);
 app.use(getDemandeDateDecroissantRoute);
 app.use(getDemandeParClientRoute);
 app.use(getTop5Route);
+app.use(postDemandeSpecialesRoute);
 
 app.listen(8000, () => console.log('Serveur démarré sur le port 8000'));
