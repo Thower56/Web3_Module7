@@ -1,122 +1,153 @@
 [
     {
       "client": "Laurent",
-      "listePiece": ["Growing Up", "Cities Of The Future"],
+      "listePiece": [    
+        { "titre": "My Girl", "artiste": "Motown", "categorie": "Soul" },
+        { "titre": "Strawberry Letter 23", "artiste": "The Brothers Johnson", "categorie": "Soul" },
+        { "titre": "Stomp!", "artiste": "The Brothers Johnson", "categorie": "Soul" }
+    ],
       "dateAjout": "2024-01-28",
       "statut": "actif"
     },
     {
       "client": "PF",
-      "listePiece": ["Gamma Goblins", "Hard days", "Money"],
+      "listePiece": [
+                      { "titre": "Loser", "artiste": "Hipster2.0", "categorie": "Emo" },
+                      { "titre": "Sunny", "artiste": "The Good Band", "categorie": "Pop" },
+                      { "titre": "My Girl", "artiste": "Motown", "categorie": "Soul" }
+                    ],
       "dateAjout": "2024-01-25",
       "statut": "actif"
     },
     {
       "client": "Napoleon",
-      "listePiece": ["Betrayal", "Goes On", "Sad World"],
+      "listePiece": [
+                      { "titre": "Loser", "artiste": "Hipster2.0", "categorie": "Emo" },
+                      { "titre": "Sunny", "artiste": "The Good Band", "categorie": "Pop" },
+                      { "titre": "My Girl", "artiste": "Motown", "categorie": "Soul" }
+                    ],
       "dateAjout": "2024-01-20",
       "statut": "inactif"
     },
     {
       "client": "Antoine",
-      "listePiece": ["Loser", "Red flowers"],
+      "listePiece": [
+                      { "titre": "Money", "artiste": "Pink Floyd", "categorie": "Rock" },
+                      { "titre": "Betrayal", "artiste": "Céline Dion", "categorie": "Pop" },
+                      { "titre": "Goes On", "artiste": "Céline Dion", "categorie": "Soft" }
+                    ],
       "dateAjout": "2024-01-18",
       "statut": "actif"
     },
     {
       "client": "Jeff",
-      "listePiece": ["Sunny", "My Girl", "Strawberry Letter 23"],
+      "listePiece": [ 
+                      { "titre": "Money", "artiste": "Pink Floyd", "categorie": "Rock" },
+                      { "titre": "Betrayal", "artiste": "Céline Dion", "categorie": "Pop" },
+                      { "titre": "Goes On", "artiste": "Céline Dion", "categorie": "Soft" }
+                    ],
       "dateAjout": "2024-01-10",
       "statut": "inactif"
     },
     {
       "client": "Bryan",
-      "listePiece": ["My life", "Stomp!"],
+      "listePiece": [ 
+                      { "titre": "Sunny", "artiste": "The Good Band", "categorie": "Pop" },
+                      { "titre": "My Girl", "artiste": "Motown", "categorie": "Soul" },
+                      { "titre": "Strawberry Letter 23", "artiste": "The Brothers Johnson", "categorie": "Soul" },
+                      { "titre": "Stomp!", "artiste": "The Brothers Johnson", "categorie": "Soul" }
+                    ],
       "dateAjout": "2024-01-28",
       "statut": "actif"
     },
     {
       "client": "Alain",
-      "listePiece": ["Growing Up", "Cities Of The Future"],
+      "listePiece": [ 
+                      { "titre": "My life", "artiste": "DJ NoName", "categorie": "Électronica" },
+                      { "titre": "Growing Up", "artiste": "A.L.E.X", "categorie": "LoFi" },
+                      { "titre": "Cities Of The Future", "artiste": "Infected Mushroom", "categorie": "Électronica" }
+                    ],
       "dateAjout": "2024-01-25",
       "statut": "actif"
     },
     {
       "client": "Max",
-      "listePiece": ["Gamma Goblins", "Hard days", "Money"],
+      "listePiece": [ 
+                      { "titre": "Sad World", "artiste": "Céline Dion", "categorie": "Variété française" },
+                      { "titre": "Red flowers", "artiste": "Hipster2.0", "categorie": "Emo" },
+                      { "titre": "Loser", "artiste": "Hipster2.0", "categorie": "Emo" },
+                      { "titre": "Sunny", "artiste": "The Good Band", "categorie": "Pop" },
+                      { "titre": "My Girl", "artiste": "Motown", "categorie": "Soul" }
+                    ],
       "dateAjout": "2024-01-20",
       "statut": "inactif"
     },
     {
-      "client": "Victor",
-      "listePiece": ["Betrayal", "Goes On", "Sad World"],
-      "dateAjout": "2024-01-18",
-      "statut": "actif"
-    },
-    {
-      "client": "Lucas",
-      "listePiece": ["Loser", "Red flowers"],
-      "dateAjout": "2024-01-10",
-      "statut": "inactif"
-    },
-    {
       "client": "Cecile",
-      "listePiece": ["Sunny", "My Girl", "Strawberry Letter 23"],
+      "listePiece": [  { "titre": "Red flowers", "artiste": "Hipster2.0", "categorie": "Emo" }],
       "dateAjout": "2024-01-28",
       "statut": "actif"
     },
     {
       "client": "Flo",
-      "listePiece": ["My life", "Stomp!"],
+      "listePiece": [
+        { "titre": "Money", "artiste": "Pink Floyd", "categorie": "Rock" },
+        { "titre": "Betrayal", "artiste": "Céline Dion", "categorie": "Pop" },
+        { "titre": "Goes On", "artiste": "Céline Dion", "categorie": "Soft" },
+        { "titre": "Sad World", "artiste": "Céline Dion", "categorie": "Variété française" },
+        { "titre": "Red flowers", "artiste": "Hipster2.0", "categorie": "Emo" },
+        { "titre": "Loser", "artiste": "Hipster2.0", "categorie": "Emo" }
+      ],
       "dateAjout": "2024-01-25",
       "statut": "actif"
     },
     {
       "client": "Marco",
-      "listePiece": ["Growing Up", "Cities Of The Future"],
+      "listePiece": [  
+        { "titre": "Red flowers", "artiste": "Hipster2.0", "categorie": "Emo" },
+      { "titre": "Loser", "artiste": "Hipster2.0", "categorie": "Emo" },
+      { "titre": "Sunny", "artiste": "The Good Band", "categorie": "Pop" }],
       "dateAjout": "2024-01-20",
       "statut": "inactif"
     },
     {
-      "client": "Daniel",
-      "listePiece": ["Gamma Goblins", "Hard days", "Money"],
-      "dateAjout": "2024-01-18",
-      "statut": "actif"
-    },
-    {
       "client": "Emma",
-      "listePiece": ["Betrayal", "Goes On", "Sad World"],
+      "listePiece": [
+        { "titre": "Gamma Goblins", "artiste": "Infected Mushroom", "categorie": "Électronica" },
+        { "titre": "Hard days", "artiste": "Loupol", "categorie": "Rock" },
+        { "titre": "Money", "artiste": "Pink Floyd", "categorie": "Rock" }
+      ],
       "dateAjout": "2024-01-10",
       "statut": "inactif"
     },
     {
       "client": "Frank",
-      "listePiece": ["Loser", "Red flowers"],
+      "listePiece": [
+        { "titre": "Gamma Goblins", "artiste": "Infected Mushroom", "categorie": "Électronica" },
+        { "titre": "Hard days", "artiste": "Loupol", "categorie": "Rock" },
+        { "titre": "Money", "artiste": "Pink Floyd", "categorie": "Rock" }],
       "dateAjout": "2024-01-28",
       "statut": "actif"
     },
     {
       "client": "Grace",
-      "listePiece": ["Sunny", "My Girl", "Strawberry Letter 23"],
+      "listePiece": [
+        { "titre": "Goes On", "artiste": "Céline Dion", "categorie": "Soft" },
+        { "titre": "Sad World", "artiste": "Céline Dion", "categorie": "Variété française" },
+        { "titre": "Red flowers", "artiste": "Hipster2.0", "categorie": "Emo" }
+      ],
       "dateAjout": "2024-01-25",
       "statut": "actif"
     },
     {
-      "client": "Henry",
-      "listePiece": ["My life", "Stomp!"],
-      "dateAjout": "2024-01-20",
-      "statut": "inactif"
-    },
-    {
       "client": "Ivy",
-      "listePiece": ["Growing Up", "Cities Of The Future"],
+      "listePiece": [
+        { "titre": "Goes On", "artiste": "Céline Dion", "categorie": "Soft" },
+        { "titre": "Sad World", "artiste": "Céline Dion", "categorie": "Variété française" },
+        { "titre": "Red flowers", "artiste": "Hipster2.0", "categorie": "Emo" },
+        { "titre": "Loser", "artiste": "Hipster2.0", "categorie": "Emo" }
+      ],
       "dateAjout": "2024-01-18",
       "statut": "actif"
-    },
-    {
-      "client": "Jack",
-      "listePiece": ["Gamma Goblins", "Hard days", "Money"],
-      "dateAjout": "2024-01-10",
-      "statut": "inactif"
     }
   ]

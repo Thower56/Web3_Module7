@@ -15,6 +15,7 @@ import { PageAdminDemandeSpecialeTotal } from './Projets/DemandeSpecialeAdmin/Pa
 import { PageAdminDemandeSpecialeActive } from './Projets/DemandeSpecialeAdmin/PageAdminDemandeSpecialeActive.js';
 import { PageAdminDemandeSpecialeOrdreCroissant } from './Projets/DemandeSpecialeAdmin/PageAdminDemandeSpecialeOrdreCroissant.js';
 import { PageAdminDemandeSpecialeOrdreDecroissant } from './Projets/DemandeSpecialeAdmin/PageAdminDemandeSpecialeOrdreDecroissant.js';
+import { PageAdminDemandeSpecialeParClient } from './Projets/DemandeSpecialeAdmin/PageAdminDemandeSpecialeParClient.js';
 import { PageAdminTop5 } from './Projets/DemandeSpecialeAdmin/PageAdminTop5.js';
 import {PageSupprimer} from './Projets/PageSupprimer.js';
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/demandes-speciales-actives" element={<PageAdminDemandeSpecialeActive />} />
         <Route path="/demandes-speciales-date-croissante" element={<PageAdminDemandeSpecialeOrdreCroissant />} />
         <Route path="/demandes-speciales-date-decroissante" element={<PageAdminDemandeSpecialeOrdreDecroissant />} />
+        <Route path="/demandes-speciales-par-client" element={<PageAdminDemandeSpecialeParClient />} />
         <Route path="/top5" element={<PageAdminTop5 />} />
         <Route path="/supprimer/:id" element={<PageSupprimer />} />
       </Routes>
