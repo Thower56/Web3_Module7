@@ -6,7 +6,7 @@ router.get('/api/demandeSpeciale/dateOrdreCroissant', async(requete, reponse) =>
     utiliserDB(async(db) => {
         try{
             const resultat = await db.collection('demandeSpeciale').find().sort({date: -1}).toArray();
-            const resultatTrie = resultat.sort((a, b) =>  a.dateAjout.localeCompare(b.dateAjout) );
+            const resultatTrie = resultat.sort((a, b) =>  String(a.dateAjout).localeCompare(String(b.dateAjout)) );
             if (resultatTrie !== null){
                 reponse.status(200).json(resultatTrie);
             }

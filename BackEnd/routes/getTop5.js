@@ -11,26 +11,33 @@ router.get('/api/demandeSpeciale-top5', async(requete, reponse)=>{
             resultat.forEach(element => {
                 let {listePiece} = element;
                 listePiece.forEach(piece => {
-                    if(demandeTitre[`${piece.titre} - ${piece.artiste}`] === undefined){
-                        demandeTitre[`${piece.titre} - ${piece.artiste}`] = 1;
+                    if(demandeTitre[`${piece.titre} - ${piece.artiste} - ${piece.categorie}`] === undefined){
+                        demandeTitre[`${piece.titre} - ${piece.artiste} - ${piece.categorie}`] = 1;
                     }
                     else{
-                        demandeTitre[`${piece.titre} - ${piece.artiste}`] += 1;
+                        demandeTitre[`${piece.titre} - ${piece.artiste} - ${piece.categorie}`] += 1;
                     }
                 });
             });
             tableau = Object.keys(demandeTitre).sort(function(a, b){return demandeTitre[b] - demandeTitre[a]});
             let topDemandes = tableau.slice(0, 5);
-            console.log(tableau);
-            let retour = resultat.find(demande => topDemandes.includes(demande.listePiece.titre));
-            console.log(retour);
-            if(topDemandes.length > 0){
-                reponse.status(200).json(topDemandes);
-            }
-            else{
+            if (topDemandes.length > 0) {
+                let listeObjets = topDemandes.map(demande => {
+                    if (typeof demande === 'string') {
+                        return {
+                            titre: demande.split(' - ')[0],
+                            artiste: demande.split(' - ')[1],
+                            categorie: demande.split(' - ')[2]
+                        };
+                    } else {
+                        return null;
+                    }
+                }).filter(objet => objet !== null);
+                reponse.status(200).json(listeObjets);
+            } else {
                 reponse.status(200).send([]);
             }
-            console.log(topDemandes)
+
         }
         catch(error){
             console.log("dans catch reponse status 500");
