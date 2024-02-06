@@ -10,7 +10,7 @@ export const ListeDemandeSpeciale = ({demandeSpeciale, handleClickDesactiver, se
                             <li key={`client_${demande._id}`}><b>Client: </b>{demande.client}</li>
                             <li key={`liste_${demande._id}`}><b>Liste: </b>
                                 <ul style={{ listStyleType: "none", paddingLeft: "15px" }}>
-                                    {demande.listePiece.map((piece, index) => <li key={index}>-{piece}</li>)}
+                                    {demande.listePiece.map((piece, index) => <li key={index}>-<b>titre:</b> {piece.titre} <b>artiste: </b> {piece.artiste}</li>)}
                                 </ul>
                             </li>
                             <li key={`date_${demande._id}`}><b>Date creation: </b>{demande.dateAjout}</li>

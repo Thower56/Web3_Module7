@@ -15,6 +15,7 @@ export const BarreNavigationAdmin = () => {
                         <Nav.Link as={Link} to="/demandes-speciales-actives" className="text-white">Demandes speciales actives</Nav.Link>
                         <Nav.Link as={Link} to="/demandes-speciales-date-croissante" className="text-white">Demandes speciales par dates croissantes</Nav.Link>
                         <Nav.Link as={Link} to="/demandes-speciales-date-decroissante" className="text-white">Demandes speciales par dates decroissantes</Nav.Link>
+                        <Nav.Link as={Link} to="/demandes-speciales-par-client" className="text-white">Demandes speciales par client</Nav.Link>
                         <Nav.Link as={Link} to="/top5" className="text-white">Top 5 demandes speciales</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
