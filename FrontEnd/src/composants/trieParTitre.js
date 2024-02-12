@@ -1,7 +1,10 @@
 import React from "react";
 import { Piece } from "./Piece";
+import useTranslation from 'react-i18next';
 
 export const trieParTitre = ({pieces, button}) => {
+
+    const { t } = useTranslation();
 
     const sansBoutton = () => {
         return (
@@ -19,7 +22,7 @@ export const trieParTitre = ({pieces, button}) => {
             <div key={piece._id}>
                 <ul Style={"list-style-type: none"}>
                     <li><Piece piece={piece}/></li>
-                    <button className="btn btn-primary" onClick={()=> button(piece._id)}>Ajouter</button>
+                    <button className="btn btn-primary" onClick={()=> button(piece._id)}>{t("ajouter")}</button>
                 </ul>
             </div>)))
     }
