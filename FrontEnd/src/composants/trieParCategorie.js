@@ -1,8 +1,8 @@
 import React from "react";
 import { Piece } from "./Piece";
-import useTranslation from 'react-i18next';
+import { useTranslation }  from 'react-i18next';
 
-export const trieParCategorie = ({pieces, button}) => {
+export const TrieParCategorie = ({pieces, button}) => {
 
     const { t } = useTranslation();
 
