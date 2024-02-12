@@ -1,11 +1,15 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 
 export const Piece = ({ piece }) => {
+
+    const { t } = useTranslation();
     return (
         <>
-            <p><b>Titre: </b> {piece.titre}</p>
-            <p><b>Artiste: </b> {piece.artiste}</p>
-            <p><b>Categorie: </b>{piece.categorie}</p>
+            <p><b>{t("titre")}: </b> {piece.titre}</p>
+            <p><b>{t("artiste")}: </b> {piece.artiste}</p>
+            <p><b>{t("categorie")}: </b>{piece.categorie}</p>
         </>
     )
 }

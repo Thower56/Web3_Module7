@@ -1,4 +1,11 @@
 {
+  "artiste": "Artist",
+  "Effacer": "Delete",
+  "Modifier": "Edit",
+  "Desactiver": "Deactivate",
+  "Statut": "Status",
+  "Date creation": "Date of creation",
+  "client": "client",
   "annuler": "Cancel",
   "ajouter": "Add",
   "titre": "Title",
