@@ -9,7 +9,7 @@ export function Langages() {
     useEffect(() => i18n.changeLanguage("en"), [i18n]);
 
     function changerLangue(langue) {
-        i18n.changerLangue(langue); 
+        i18n.changeLanguage(langue); 
     }   
     return (
         <Row className="mt-3">

@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-
 import { Button } from 'react-bootstrap';
 import { PageAccueil } from "./Projets/PageAccueil";
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -19,11 +18,13 @@ import { PageAdminDemandeSpecialeOrdreDecroissant } from './Projets/DemandeSpeci
 import { PageAdminDemandeSpecialeParClient } from './Projets/DemandeSpecialeAdmin/PageAdminDemandeSpecialeParClient.js';
 import { PageAdminTop5 } from './Projets/DemandeSpecialeAdmin/PageAdminTop5.js';
 import {PageSupprimer} from './Projets/PageSupprimer.js';
+import { Langages } from './composants/Langages.js';
 
 function App() {
   return (
     <BrowserRouter>
     <Container>
+      <Langages />
     <BarreNavigation />
       <Routes>
         <Route path="/" element={<PageAccueil />} />
