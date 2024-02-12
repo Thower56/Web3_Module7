@@ -4,8 +4,10 @@ import { Piece } from "../composants/Piece";
 import { Navigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import { BarreNavigationAdmin } from "./DemandeSpecialeAdmin/BarreNavigationAdmin";
+import {useTranslation} from "react-i18next";
 
 export const PageModifier = () => {
+    const { t } = useTranslation();
     const [piecesModifier, setPieces] = useState();
     const [titre, setTitre] = useState();
     const [artiste, setArtiste] = useState();

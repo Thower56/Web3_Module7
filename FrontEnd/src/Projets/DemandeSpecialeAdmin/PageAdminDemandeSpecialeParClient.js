@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import { ListeDemandeSpeciale } from '../../composants/ListeDemandeSpeciale';
 import { BarreNavigationAdmin } from './BarreNavigationAdmin';
 import { handleClickDesactiver } from './handleClickDesactiver';
+import {useTranslation} from "react-i18next";
 
 export const PageAdminDemandeSpecialeParClient = () => {
+    const { t } = useTranslation();
     const [demandeSpeciale, setDemandeSpeciale] = useState([]);
     const [nomClient, setNomClient] = useState('');
 
@@ -34,8 +36,8 @@ export const PageAdminDemandeSpecialeParClient = () => {
     return(
         <div>
             <BarreNavigationAdmin />
-            <h1>Liste des demandes speciales par client</h1>
-            <p>Nom du client: </p>
+            <h1>{t('listeDemandesSpeciales')}</h1>
+            <p>{t('nom')}</p>
             <input type="text" id="nomClient" onChange={(e) => setNomClient(e.target.value)}></input>
             <ListeDemandeSpeciale demandeSpeciale={demandeSpeciale} handleClickDesactiver={handleClickDesactiver} setDemandeSpeciale={setDemandeSpeciale}/>
         </div>

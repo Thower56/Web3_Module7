@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { ListePiecesAdmin } from '../composants/ListePiecesAdmin';
 import { BarreNavigationAdmin } from './DemandeSpecialeAdmin/BarreNavigationAdmin';
+import {useTranslation} from "react-i18next";
+
 
 export const PageRepertoireAdmin = () => {
+    const { t } = useTranslation();
     const [Pieces, setPieces] = useState([]);
 
     useEffect(() => {
@@ -24,7 +27,7 @@ export const PageRepertoireAdmin = () => {
     return (
         <div>
             <BarreNavigationAdmin />
-            <h1>Repertoire Page</h1>
+            <h1>{t('repertoire')}</h1>
             <ListePiecesAdmin pieces={Pieces}/>
         </div>
     );

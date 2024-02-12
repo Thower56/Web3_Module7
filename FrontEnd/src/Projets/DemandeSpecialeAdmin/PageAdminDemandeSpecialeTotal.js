@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import { ListeDemandeSpeciale } from '../../composants/ListeDemandeSpeciale';
 import { RecuperationListe } from '../../composants/RecuperationListe';
 import { BarreNavigationAdmin } from './BarreNavigationAdmin';
+import {useTranslation} from "react-i18next";
 
 export const PageAdminDemandeSpecialeTotal = () => {
+    const { t } = useTranslation();
     const [demandeSpeciale, setDemandeSpeciale] = useState([]);
 
     useEffect(() => {
@@ -48,7 +50,7 @@ export const PageAdminDemandeSpecialeTotal = () => {
     return (
         <div>
             <BarreNavigationAdmin />
-            <h1>Liste des demandes spéciales</h1>
+            <h1>{t('listeDemandesSpeciales')}</h1>
             <ListeDemandeSpeciale demandeSpeciale={demandeSpeciale} handleClickDesactiver={handleClickDesactiver} />
         </div>
     );

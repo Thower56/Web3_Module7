@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { ListePieces } from '../composants/ListePieces';
 import { pieces } from '../composants/contenu-pieces-test';
+import {useTranslation} from "react-i18next";
 
 export const PageRepertoire = () => {
+    const { t } = useTranslation();
     const [Pieces, setPieces] = useState([]);
     const [selectionTri, setselectionTri] = useState('trieParCategorie');
     const [filtre, setFiltre] = useState('');
@@ -40,18 +42,18 @@ export const PageRepertoire = () => {
     return (
         <div className='container'>
             <div className='row'>
-                <h1>Repertoire Page</h1>
+                <h1>{t('repertoire')}</h1>
                 <div>
-                    <span>Trier par:</span>
+                    <span>{t('spanDS')}</span>
                 </div>
                 <div className='col-2'>
                     <select id='selection' className='form-control' onChange={changementDeTri}>
-                        <option value="trieParCategorie">Categorie</option>
-                        <option value="trieParArtiste">Artiste</option>
-                        <option value="trieParTitre">Titre</option>
+                        <option value="trieParCategorie">{t('categorie')}</option>
+                        <option value="trieParArtiste">{t('artiste')}</option>
+                        <option value="trieParTitre">{t('groupe')}</option>
                     </select>
                 </div>
-                <span>Recherche:</span>
+                <span>{t('recherche')}</span>
                 <div className='col-4'> 
                     <input className='form-control' placeholder='Filtre...' onChange={changerFiltre}></input>
                 </div>

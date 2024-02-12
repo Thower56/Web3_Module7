@@ -4,9 +4,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useState, Navigate, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 
 export const PageSupprimer = ({piece}) => {
+    const { t } = useTranslation();
     const [pieces, setPieces] = useState();
     const [rediriger, setRediriger] = useState(false);
     const param = useParams();
@@ -48,11 +50,11 @@ export const PageSupprimer = ({piece}) => {
     return(
         <>
             {rediriger ? <Navigate to="/repertoireAdmin"/> : null}
-            <h1>Supprimer une pièce</h1>
-            <span>Voulez-vous vraiment supprimer la piece: </span>
+            <h1>{t('titreSuppression')}</h1>
+            <span>{t('confirmation')}</span>
             {pieces ? <Piece piece={pieces}/> : null}
-            <button className="btn btn-danger" onClick={() => {EffacerPiece(pieces._id)}}>Oui</button>
-            <button className="btn btn-primary" onClick={() => {Annuler()}}>Non</button>
+            <button className="btn btn-danger" onClick={() => {EffacerPiece(pieces._id)}}>{t('oui')}</button>
+            <button className="btn btn-primary" onClick={() => {Annuler()}}>{t('non')}</button>
         </>
     )
 };

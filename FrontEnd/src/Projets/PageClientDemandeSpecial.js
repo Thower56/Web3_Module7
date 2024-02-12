@@ -3,9 +3,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { PiecesDemandeSpecialeClient } from "../composants/PiecesDemandeSpecialeClient";
 import { Button } from "react-bootstrap";
 import { ListePieces } from "../composants/ListePieces";
+import {useTranslation} from "react-i18next";
 
 
 export const PageClientDemandeSpecial = () => {
+    const { t } = useTranslation();
     const [client, setClient] = useState('');
     const [demandePieces, setListePieces] = useState([]);
     const [Pieces, setPieces] = useState([]);
@@ -91,32 +93,32 @@ export const PageClientDemandeSpecial = () => {
 
     return (
         <div className="container">
-            <h1>Demande Spéciale</h1>
+            <h1>{t('demandesSpeciales')}</h1>
             <div className="row">
                 <div className="col-2">
                     <input type="text" className="form-control" placeholder="Votre nom"  onChange={changementDeNom}/>
                     
                 </div>
                 <div className="col-2">
-                    <Button variant="primary" onClick={postDemandeSpeciales}>Envoyer</Button>
+                    <Button variant="primary" onClick={postDemandeSpeciales}>{t('envoyer')}</Button>
                     
                 </div>
                 <div className="col-2"><span>{message}</span></div>
             </div>
-            <h2>Votre demande special:</h2>
+            <h2>{t('titreDS')}</h2>
             <PiecesDemandeSpecialeClient Pieces={demandePieces} DeletePiece={DeletePiece}/>
-            <h2>Nos pieces:</h2>
+            <h2>{t('repertoire')}</h2>
             <div>
-                <span>Trier par:</span>
+                <span>{t('spanDS')}</span>
             </div>
             <div className='col-2'>
                     <select id='selection' className='form-control' onChange={changementDeTri}>
-                        <option value="trieParCategorie">Categorie</option>
-                        <option value="trieParArtiste">Artiste</option>
-                        <option value="trieParTitre">Titre</option>
+                        <option value="trieParCategorie">{t('categorie')}</option>
+                        <option value="trieParArtiste">{t('atrtiste')}</option>
+                        <option value="trieParTitre">{t('titre')}</option>
                     </select>
             </div>
-            <span>Recherche:</span>
+            <span>{t('recherche')}</span>
             <div className="row">
                 <div className='col-2'> 
                     <input className='form-control' placeholder='Titre...' onChange={changerfiltreTitre}></input>

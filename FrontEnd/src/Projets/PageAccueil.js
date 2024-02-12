@@ -2,15 +2,17 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { BarreNavigation } from "./BarreNavigation";
 import { Button } from 'react-bootstrap';
+import {useTranslation} from "react-i18next";
 
 export const PageAccueil = () => {
+    const { t } = useTranslation();
     return (
         <>
             <Container className="" >
                 <Row>
                     <Col>
-                        <h1 className="">Bienvenue dans notre magasin de musique</h1>
-                        <p>Nous sommes fiers de vous proposer une large sélection d'instruments de musique, d'équipements audio et de partitions.</p>
+                        <h1 className="">{t('message')}</h1>
+                        <p>{t('texteAccueil')}</p>
                     </Col>
                 </Row>
             </Container>

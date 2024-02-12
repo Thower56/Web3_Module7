@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import {useTranslation} from "react-i18next";
 
 export const PageAjouter = () => {
+    const { t } = useTranslation();
     const [titre, setTitle] = useState('');
     const [artiste, setArtist] = useState('');
     const [catégorie, setCategory] = useState('');
@@ -41,22 +43,22 @@ export const PageAjouter = () => {
 
     return (
         <div className="container">
-            <h1>Ajouter Page</h1>
+            <h1>{t('ajouter')}</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Titre</label>
+                    <label>{t('titre')}</label>
                     <input type="text" className="form-control" value={titre} onChange={TitleChange} />
                 </div>
                 <div>
-                    <label >Artiste</label>
+                    <label >{t('artisteGroupe')}</label>
                     <input type="text" className="form-control" value={artiste} onChange={ArtistChange} />
                 </div>
                 <div>
-                    <label >Catégorie</label>
+                    <label >{t('categorie')}</label>
                     <input type="text" className="form-control" value={catégorie} onChange={CategoryChange} />
                 </div>
-                <button type="submit" className="btn btn-primary" onClick={ajouterPiece}>Ajouter</button>
-                <button type="button" className="btn btn-secondary" onClick={Cancel}>Annuler</button>
+                <button type="submit" className="btn btn-primary" onClick={ajouterPiece}>{t('ajouter')}</button>
+                <button type="button" className="btn btn-secondary" onClick={Cancel}>{t('annuler')}</button>
             </form>
             <div><h3>{message}</h3></div>
         </div>
